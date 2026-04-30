@@ -1,0 +1,71 @@
+Create a modern, responsive demo website for a computer institute named "NITS Computer" using only HTML, CSS, and JavaScript (no database, no backend).
+
+The website should include the following sections:
+
+1. Home Page:
+
+* Clean hero section with institute name "NITS Computer"
+* Tagline like "Empowering Digital Skills for the Future"
+* Call-to-action buttons (Enroll Now, Contact Us)
+
+2. About Us:
+
+* Short description of the institute
+* Mission and vision
+* Highlight experience and teaching quality
+
+3. Courses Section:
+
+* Display multiple courses like:
+
+  * Basic Computer Course
+  * Tally with GST
+  * Web Development (HTML, CSS, JS)
+  * DCA / ADCA
+* Each course should have a card layout with title, duration, and short description
+
+4. Services / Features:
+
+* Job-oriented training
+* Certification
+* Practical labs
+* Experienced faculty
+
+5. Gallery Section:
+
+* Grid layout with placeholder images
+
+6. Contact Section:
+
+* Contact form (Name, Mobile, Message) – frontend only (no backend submission)
+* Display phone number, email, and address
+
+7. Footer:
+
+* Social links
+* Quick links
+* Copyright
+
+Design Requirements:
+
+* Use a modern UI with gradients and soft shadows
+* Fully responsive (mobile + desktop)
+* Use animations (hover effects, smooth scrolling)
+* Use Google Fonts (Poppins or similar)
+* Color theme: Blue + White (professional look)
+
+Technical Requirements:
+
+* Pure HTML, CSS, JavaScript only
+* No frameworks required (optional: Bootstrap allowed)
+* All content should be static (no database or API)
+
+Bonus:
+
+* Add a sticky navbar
+* Add scroll-to-top button
+* Add simple JavaScript form validation
+
+Output:
+
+* Provide complete code in a single HTML file with internal CSS and JS

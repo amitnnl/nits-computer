@@ -1,0 +1,6 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/hotelsunplaza/nitscomputer.in
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -a * $DEPLOYPATH/
+    - /bin/cp -a .htaccess $DEPLOYPATH/
