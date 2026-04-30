@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NITS Computer | Master the Digital World</title>
+    <meta name="description" content="NITS Computer Institute offers premium professional courses in Basic Computer, Tally Prime, Web Development, and ADCA. Shape your future with elite digital skills.">
+    
+    <!-- Fonts: Outfit for Headings, Inter for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-700: #334155;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--slate-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--slate-300);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        nav.sticky {
+            padding: 15px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            font-size: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate-700);
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:not(.enroll-btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .enroll-btn {
+            background: var(--dark);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .enroll-btn:hover {
+            transform: translateY(-2px);
+            background: var(--primary);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #fff, #cbd5e1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 48px;
+            color: var(--slate-300);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.6);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 120px 8%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--dark);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+        }
+
+        /* --- About Us --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img-wrapper {
+            position: relative;
+        }
+
+        .about-img-wrapper img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--primary);
+            border-radius: 20px;
+            z-index: 1;
+            opacity: 0.2;
+        }
+
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--slate-700);
+            margin-bottom: 32px;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .mv-item {
+            background: white;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--slate-200);
+            transition: var(--transition);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .mv-item:hover {
+            transform: translateX(10px);
+            border-color: var(--primary);
+        }
+
+        .mv-item i {
+            font-size: 24px;
+            color: var(--primary);
+            background: rgba(59, 130, 246, 0.1);
+            width: 54px;
+            height: 54px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 14px;
+            flex-shrink: 0;
+        }
+
+        .mv-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        /* --- Courses --- */
+        .courses {
+            background: #f1f5f9;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--slate-200);
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .course-img {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .course-card:hover .course-img img {
+            transform: scale(1.08);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .course-info {
+            padding: 32px;
+        }
+
+        .course-info h3 {
+            margin-bottom: 12px;
+            color: var(--dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .course-info p {
+            font-size: 1rem;
+            color: var(--slate-700);
+            margin-bottom: 28px;
+        }
+
+        .learn-more {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .learn-more:hover {
+            gap: 12px;
+            color: var(--primary);
+        }
+
+        /* --- Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-item {
+            padding: 48px 32px;
+            border-radius: 28px;
+            background: white;
+            border: 1px solid var(--slate-200);
+            transition: var(--transition);
+            text-align: left;
+        }
+
+        .feature-item:hover {
+            background: var(--dark);
+            border-color: var(--dark);
+            transform: translateY(-8px);
+        }
+
+        .feature-item i {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 28px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .feature-item p {
+            color: var(--slate-700);
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .feature-item:hover h3, .feature-item:hover p {
+            color: white;
+        }
+
+        /* --- Contact --- */
+        .contact {
+            background: var(--dark);
+            color: white;
+            border-radius: 0;
+        }
+
+        .contact .section-header h2 {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            transform: scale(1.02);
+        }
+
+        .info-card i {
+            font-size: 24px;
+            color: var(--primary);
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 18px;
+            flex-shrink: 0;
+        }
+
+        .info-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: var(--slate-300);
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .contact-form-wrapper {
+            background: white;
+            padding: 50px;
+            border-radius: 32px;
+            box-shadow: var(--shadow-xl);
+            color: var(--dark);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--slate-700);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--slate-200);
+            border-radius: 14px;
+            outline: none;
+            font-size: 16px;
+            transition: var(--transition);
+            background: #f8fafc;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--dark);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #020617;
+            color: white;
+            padding: 100px 8% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-col p {
+            color: var(--slate-300);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--slate-300);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            color: white;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .newsletter-form input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--slate-700);
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* --- Scroll to Top --- */
+        #scrollTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            color: white;
+            border-radius: 16px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        #scrollTop:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 4rem; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 991px) {
+            nav { padding: 20px 5%; }
+            .about-container, .contact-container { grid-template-columns: 1fr; gap: 60px; }
+            .about-img-wrapper { order: 2; }
+            .about-content { order: 1; }
+            .section-header h2 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            .menu-btn { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                justify-content: center;
+                padding: 50px;
+                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { right: 0; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero-btns { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .copyright { flex-direction: column; gap: 20px; }
+        }
+        /* --- Toast Notification --- */
+        #toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--dark);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 2000;
+            transition: var(--transition);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        #toast i {
+            color: var(--primary);
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scroll to Top Button -->
+    <div id="scrollTop"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Toast Notification -->
+    <div id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Inquiry Sent Successfully!</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-microchip"></i>
+            NITS
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="enroll-btn">Apply Now</a></li>
+        </ul>
+        <div class="menu-btn" id="menuBtn">
+            <i class="fas fa-bars-staggered"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="animate__animated animate__fadeInDown" style="color: var(--primary); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; display: block;">Education Reimagined</span>
+            <h1 class="animate__animated animate__fadeInUp">Master the Digital Future at NITS</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Accelerate your career with industry-leading computer education. From coding to accounting, we provide the tools for your global success.</p>
+            <div class="hero-btns animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#contact" class="btn btn-primary">Start Your Journey <i class="fas fa-chevron-right"></i></a>
+                <a href="#about" class="btn btn-outline">Explore More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Learning at NITS">
+            </div>
+            <div class="about-content">
+                <span class="section-tag">Since 2014</span>
+                <h2>Redefining Technical Excellence</h2>
+                <p>NITS Computer is not just an institute; it's a launchpad for your dreams. We combine rigorous academic theory with real-world practical application to ensure our graduates are top-tier professionals.</p>
+                
+                <div class="mission-vision">
+                    <div class="mv-item">
+                        <i class="fas fa-rocket"></i>
+                        <div>
+                            <h4>Elite Training</h4>
+                            <p>Curriculum designed by industry experts to meet current global standards.</p>
+                        </div>
+                    </div>
+                    <div class="mv-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4>Global Certification</h4>
+                            <p>Get recognized certifications that open doors to international careers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="section-header">
+            <span class="section-tag">Elite Programs</span>
+            <h2>Our Specialized Courses</h2>
+        </div>
+        <div class="course-grid">
+            <!-- Basic Computer Course -->
+            <div class="course-card">
+                <div class="course-img">
+                    <span class="course-badge">Fundamental</span>
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Basic Computer">
+                </div>
+                <div class="course-info">
+                    <span class="duration"><i class="far fa-clock"></i> 3 Months</span>
+                    <h3>Digital Literacy</h3>
+                    <p>Master the essential building blocks of modern computing, office suites, and internet proficiency.</p>
+                    <a href="#contact" class="learn-more">Enroll Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Tally with GST -->
+            <div class="course-card">
+                <div class="course-img">
+                    <span class="course-badge">Professional</span>
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tally">
+                </div>
+                <div class="course-info">
+                    <span class="duration"><i class="far fa-clock"></i> 4 Months</span>
+                    <h3>Financial Accounting</h3>
+                    <p>Expert-level training in Tally Prime with GST, inventory management, and taxation compliance.</p>
+                    <a href="#contact" class="learn-more">Enroll Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="course-card">
+                <div class="course-img">
+                    <span class="course-badge">Creative</span>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Web Development">
+                </div>
+                <div class="course-info">
+                    <span class="duration"><i class="far fa-clock"></i> 6 Months</span>
+                    <h3>Full Stack Web</h3>
+                    <p>Build the modern web with HTML5, CSS3, JavaScript, and responsive design frameworks.</p>
+                    <a href="#contact" class="learn-more">Enroll Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- DCA / ADCA -->
+            <div class="course-card">
+                <div class="course-img">
+                    <span class="course-badge">Advanced</span>
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="DCA">
+                </div>
+                <div class="course-info">
+                    <span class="duration"><i class="far fa-clock"></i> 12 Months</span>
+                    <h3>Advanced Diploma</h3>
+                    <p>The ultimate technical program covering high-end hardware, networking, and software engineering.</p>
+                    <a href="#contact" class="learn-more">Enroll Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-header">
+            <span class="section-tag">The NITS Edge</span>
+            <h2>Why Students Choose Us</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Job Placement</h3>
+                <p>Dedicated career services to help you land your dream role in tech.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-vial"></i>
+                <h3>Innovation Labs</h3>
+                <p>24/7 access to high-performance labs with the latest tech stack.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chalkboard-user"></i>
+                <h3>Expert Mentors</h3>
+                <p>Learn directly from professionals who have worked in Fortune 500 companies.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Lifetime Support</h3>
+                <p>Alumni access to our resources and continuing education workshops.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <span class="section-tag" style="color: var(--primary);">Connect With Us</span>
+                <h2 style="margin-bottom: 20px;">Ready to Start?</h2>
+                <p style="margin-bottom: 40px; color: var(--slate-300);">Have questions? Our admissions team is here to help you choose the right path for your future.</p>
+                
+                <div class="info-card">
+                    <i class="fas fa-phone-volume"></i>
+                    <div>
+                        <h4>Call Us Directly</h4>
+                        <p>+91 94168 86868</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-paper-plane"></i>
+                    <div>
+                        <h4>Email Support</h4>
+                        <p>info@nitscomputer.in</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h4>Visit Our Campus</h4>
+                        <p>Singhana Road, near Balaji Dental Clinic, Narnaul, Haryana</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="enrollForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" placeholder="94168 86868" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="4" placeholder="Tell us about your career goals..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 25px;">
+                    <i class="fas fa-microchip"></i> NITS
+                </a>
+                <p>Empowering the next generation of digital leaders since 2014. Professional excellence in every byte.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#features">The Edge</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Programs</h4>
+                <ul class="footer-links">
+                    <li><a href="#courses">Digital Literacy</a></li>
+                    <li><a href="#courses">Financial Accounting</a></li>
+                    <li><a href="#courses">Web Engineering</a></li>
+                    <li><a href="#courses">Advanced Diploma</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Join Our Community</h4>
+                <p>Subscribe to receive news about new batches and tech workshops.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email Address">
+                    <button class="newsletter-btn">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>&copy; 2026 NITS Computer Institute. All rights reserved.</span>
+            <span>Designed by <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">NITS Digital</a></span>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sticky Navbar with Scroll Direction
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const currentScroll = window.scrollY;
+            
+            if (currentScroll > 100) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+            
+            // Scroll to Top visibility
+            const scrollTop = document.getElementById('scrollTop');
+            if (currentScroll > 600) {
+                scrollTop.style.display = 'flex';
+            } else {
+                scrollTop.style.display = 'none';
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars-staggered');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Smooth Scroll & Close Menu
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.hash !== '') {
+                    navLinks.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.add('fa-bars-staggered');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+
+        // Scroll to Top
+        document.getElementById('scrollTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Toast Function
+        function showToast(message, icon = 'fa-check-circle') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastIcon = toast.querySelector('i');
+            
+            toastMessage.textContent = message;
+            toastIcon.className = `fas ${icon}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Form Submission
+        const enrollForm = document.getElementById('enrollForm');
+        enrollForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = enrollForm.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                showToast('Success! Our admissions team will call you within 24 hours.');
+                enrollForm.reset();
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div, .course-card, .feature-item, .info-card').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
